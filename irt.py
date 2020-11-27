@@ -18,3 +18,13 @@ class IRT:
         x = linspace(self.theta_min, self.theta_max, dots)
         y = [self.icc(k) for k in x]
         return x, y
+    
+    def iic(self, theta=float) -> float:
+        p = self.icc(theta)
+        q = 1 - p
+        return self.a**2 * ( ( p - self.c )**2 / ( 1 - self.c )**2 ) * ( q / p )
+    
+    def iic_xy(self, dots=1001):
+        x = linspace(self.theta_min, self.theta_max, dots)
+        y = [self.iic(k) for k in x]
+        return x, y
