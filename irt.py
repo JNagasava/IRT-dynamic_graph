@@ -4,7 +4,6 @@ from math import exp
 class IRT:
 
     def __init__(self, a=2.0, b=0.0, c=0.0, theta_min=-3.0, theta_max=3.0):
-
         self.a = a
         self.b = b
         self.c = c
