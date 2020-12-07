@@ -19,7 +19,9 @@ Além de gerar as curvas, é possível utilizar um segundo modelo para comparaç
 
 Pela demosntração a seguir, é possível ter uma noção dos recursos e funcionalidades que a aplicação tem:
 
-<img src="https://github.com/JNagasava/IRT-dynamic_graph/assets/demo.gif" />
+<p align="center">
+  <img src="https://github.com/JNagasava/IRT-dynamic_graph/blob/main/assets/demo.gif" />
+</p>
 
 ## Execução
 
