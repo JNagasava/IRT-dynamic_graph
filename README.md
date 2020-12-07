@@ -43,8 +43,8 @@ python main.py
 
 Caso o seu interesse seja apenas utilizar a aplicação em seu estado original (sem a modificação de nenhum parâmetro ou *feature*), baixe o executável abaixo, de acordo com o seu sistema operacional:
 
-* [windows](https://github.com/JNagasava/IRT-dynamic_graph/executables/irt_graph_windows10.exe)
-* [linux](https://github.com/JNagasava/IRT-dynamic_graph/executables/irt_graph)
+* [windows](https://github.com/JNagasava/IRT-dynamic_graph/blob/main/executables/irt_graph_windows10.exe)
+* [linux](https://github.com/JNagasava/IRT-dynamic_graph/blob/main/executables/irt_graph)
 
 ## Ambiente de Desenvolvimento utilizado
 
