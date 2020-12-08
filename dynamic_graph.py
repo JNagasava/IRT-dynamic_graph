@@ -1,4 +1,4 @@
-import matplotlib.pyplot as plt
+from matplotlib.pyplot import subplots, subplots_adjust, grid, plot, axes, draw, show, close
 from matplotlib.widgets import Slider, Button, CheckButtons
 
 from irt import IRT
@@ -29,16 +29,16 @@ class Dynamic_Graph:
         self.x_iic, self.y_iic = model.iic()
 
         # Subplot
-        self.fig, self.ax = plt.subplots()
-        plt.subplots_adjust(left=0.1, bottom=0.42)
+        self.fig, self.ax = subplots()
+        subplots_adjust(left=0.1, bottom=0.42)
         self.fig.canvas.set_window_title('Item Response Theory')
         self.ax.set_ylim([-0.1, 1.1]) 
         self.info_plot()
-        plt.grid()
+        grid()
 
         # Curvas do Model
-        self.p_icc, = plt.plot(self.x_icc, self.y_icc, linestyle='solid',linewidth=2, color='blue')
-        self.p_iic, = plt.plot(self.x_iic, self.y_iic, linestyle='dashed', linewidth=1, color='blue')
+        self.p_icc, = plot(self.x_icc, self.y_icc, linestyle='solid',linewidth=2, color='blue')
+        self.p_iic, = plot(self.x_iic, self.y_iic, linestyle='dashed', linewidth=1, color='blue')
         self.p_iic.set_visible(False)
 
         # Second Model
@@ -46,17 +46,17 @@ class Dynamic_Graph:
         self.update_sliders(second_model=True)
 
         # Sliders
-        self.sliders = {'a': self.add_slider(axes=[0.25, 0.23, 0.59, 0.05], 
+        self.sliders = {'a': self.add_slider(axes_values=[0.25, 0.23, 0.59, 0.05], 
                                              label=r'$\mathbb{a}$', 
                                              valmin=0.0, 
-                                             valmax=3.0, 
+                                             valmax=5.0, 
                                              valinit=2.0),
-                        'b': self.add_slider(axes=[0.25, 0.13, 0.59, 0.05], 
+                        'b': self.add_slider(axes_values=[0.25, 0.13, 0.59, 0.05], 
                                              label=r'$\mathbb{b}$', 
-                                             valmin=-3.0, 
-                                             valmax=3.0, 
+                                             valmin=-4.0, 
+                                             valmax=4.0, 
                                              valinit=0.0),
-                        'c': self.add_slider(axes=[0.25, 0.03, 0.59, 0.05], 
+                        'c': self.add_slider(axes_values=[0.25, 0.03, 0.59, 0.05], 
                                              label=r'$\mathbb{c}$', 
                                              valmin=0.0, 
                                              valmax=1.0, 
@@ -65,11 +65,11 @@ class Dynamic_Graph:
         self.update_sliders()
 
         # CheckButtons
-        self.checkbtns = CheckButtons(ax=plt.axes([0.1, 0.03, 0.1, 0.15]), labels=[r'$ICC$', r'$IIC$', r'$2nd$'], actives=[True, False, False])
+        self.checkbtns = CheckButtons(ax=axes([0.1, 0.03, 0.1, 0.15]), labels=[r'$ICC$', r'$IIC$', r'$2nd$'], actives=[True, False, False])
         self.checkbtns.on_clicked(self.check)
 
         # Button
-        self.btn = Button(ax=plt.axes([0.1, 0.21, 0.1, 0.07]), label='Reset')
+        self.btn = Button(ax=axes([0.1, 0.21, 0.1, 0.07]), label='Reset')
         self.btn.on_clicked(self.reset)
 
     def create_second_model(self):
@@ -84,25 +84,25 @@ class Dynamic_Graph:
         self.second_x_iic, self.second_y_iic = self.second_model.iic()
 
         # Curvas do 2nd Model
-        self.second_p_icc, = plt.plot(self.second_x_icc, self.second_y_icc, linestyle='solid',linewidth=2, color='red')
-        self.second_p_iic, = plt.plot(self.second_x_iic, self.second_y_iic, linestyle='dashed', linewidth=1, color='red')
+        self.second_p_icc, = plot(self.second_x_icc, self.second_y_icc, linestyle='solid',linewidth=2, color='red')
+        self.second_p_iic, = plot(self.second_x_iic, self.second_y_iic, linestyle='dashed', linewidth=1, color='red')
         self.second_p_icc.set_visible(False)
         self.second_p_iic.set_visible(False)
 
         # Sliders do 2nd Model 
-        self.second_sliders = {'a': self.add_slider(axes=[0.6, 0.23, 0.25, 0.05], 
+        self.second_sliders = {'a': self.add_slider(axes_values=[0.6, 0.23, 0.25, 0.05], 
                                                     label=r'$\mathbb{a}$', 
                                                     valmin=0.0, 
-                                                    valmax=3.0, 
+                                                    valmax=5.0, 
                                                     valinit=2.0, 
                                                     color='#d41526'),
-                               'b': self.add_slider(axes=[0.6, 0.13, 0.25, 0.05], 
+                               'b': self.add_slider(axes_values=[0.6, 0.13, 0.25, 0.05], 
                                                     label=r'$\mathbb{b}$', 
-                                                    valmin=-3.0, 
-                                                    valmax=3.0, 
+                                                    valmin=-4.0, 
+                                                    valmax=4.0, 
                                                     valinit=0.0, 
                                                     color='#d41526'),
-                               'c': self.add_slider(axes=[0.6, 0.03, 0.25, 0.05], 
+                               'c': self.add_slider(axes_values=[0.6, 0.03, 0.25, 0.05], 
                                                     label=r'$\mathbb{c}$', 
                                                     valmin=0.0, 
                                                     valmax=1.0, 
@@ -132,13 +132,13 @@ class Dynamic_Graph:
         self.ax.set_xlabel(xlabel)
         self.ax.set_ylabel(ylabel)
 
-    def add_slider(self, axes, label, valmin, valmax, valinit, valfmt="%1.2f", closedmax=True, color=None):
+    def add_slider(self, axes_values, label, valmin, valmax, valinit, valfmt="%1.2f", closedmax=True, color=None):
         '''
         Cria um novo slider a partir de determinadas configuracoes
 
         Parametros
         ----------
-            axes : list(float, float, float, float)
+            axes_values : list(float, float, float, float)
                 lista com a posicao do slider -> list(left, up, right, bottom)
             label : str
                 nome do parametro do slider
@@ -160,7 +160,7 @@ class Dynamic_Graph:
             matplotlib.widgets.Slider
                 retorna o slider criado
         '''
-        axSlider = plt.axes(axes)
+        axSlider = axes(axes_values)
         slider = Slider(ax=axSlider, 
                         label=label, 
                         valmin=valmin,
@@ -223,7 +223,7 @@ class Dynamic_Graph:
         else:
             self.ax.set_ylim([-0.1, 1.1])
 
-        plt.draw()
+        draw()
     
     def update_second_model(self, val=None):
         '''
@@ -254,7 +254,7 @@ class Dynamic_Graph:
         else:
             self.ax.set_ylim([-0.1, 1.1])
 
-        plt.draw()
+        draw()
     
     def check(self, label=None):
         '''
@@ -345,10 +345,10 @@ class Dynamic_Graph:
         '''
         Inicia a exibicao do plot
         '''
-        plt.show()
+        show()
     
     def plot_close(self):
         '''
         Fecha a exibicao do plot
         '''
-        plt.close()
+        close()

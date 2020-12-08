@@ -9,7 +9,7 @@ class IRT:
     de acerto de um item e da informacao do item 
     '''
 
-    def __init__(self, a=2.0, b=0.0, c=0.0, theta_min=-3.0, theta_max=3.0):
+    def __init__(self, a=2.0, b=0.0, c=0.0, theta_min=-5.0, theta_max=5.0):
         '''
         Funcao construtora da classe a qual atribui os valores dos parametros
         do modelo
@@ -52,7 +52,7 @@ class IRT:
         '''
         return self.c + ( 1.0 - self.c ) / ( 1.0 + exp( -1.0 * self.a * ( theta - self.b ) ) )
     
-    def icc(self, dots=1001):
+    def icc(self, dots=121):
         '''
         Gera os valores x e y da Curva Caracteristica do Item
 
@@ -89,7 +89,7 @@ class IRT:
         q = 1 - p
         return self.a**2 * ( ( p - self.c )**2 / ( 1 - self.c )**2 ) * ( q / p )
     
-    def iic(self, dots=1001):
+    def iic(self, dots=121):
         '''
         Gera os valores x e y da Curva de Informacao do Item
 
