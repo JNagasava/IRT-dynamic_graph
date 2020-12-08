@@ -49,8 +49,11 @@ python main.py
 
 Caso o seu interesse seja apenas utilizar a aplicação em seu estado original (sem a modificação de nenhum parâmetro ou *feature*), baixe o executável abaixo, de acordo com o seu sistema operacional:
 
-* [windows](https://github.com/JNagasava/IRT-dynamic_graph/blob/main/executables/irt_graph_windows10.exe)
+* [windows (opção 1)](https://github.com/JNagasava/IRT-dynamic_graph/blob/main/executables/simulador_TRI_windows_x64.exe)
+* [windows (opção 2)](https://github.com/JNagasava/IRT-dynamic_graph/blob/main/executables/Simulador_TRI.zip)
 * [linux](https://github.com/JNagasava/IRT-dynamic_graph/blob/main/executables/irt_graph)
+
+*Obs.: Na opção 1 do windows será baixado somente o executável (dependendo do ambiente, a execução pode ser mais lenta). Na opção 2 será baixado o diretório junto com as bibliotecas utilizadas (esta opção é mais rápida).*
 
 ## Ambiente de Desenvolvimento utilizado
 
