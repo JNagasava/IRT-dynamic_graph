@@ -5,13 +5,19 @@ Aplicação que faz a simulação da curva característica e de informação do 
 
 Esta aplicação, a qual foi desenvolvida em python, tem como função representar graficamente a curva característica e de informação do item a partir do modelo de 3 parâmetros da TRI. 
 
-* Modelo de 3 parâmetros
-$$P(\theta) = c + \frac{1 - c}{1 + e^{-a(\theta-b)}}$$
+* **Modelo de 3 parâmetros**
 
-* Informação do Item
-$$I(\theta) = a^{2} \frac{(P(\theta) - c)^{2}}{(1 - c)^{2}} \frac{Q(\theta)}{P(\theta)}$$
+<p align="center">
+<img src="https://latex.codecogs.com/gif.latex?\dpi{90}&space;\huge&space;P(\theta)&space;=&space;c&space;&plus;&space;\frac{1&space;-&space;c}{1&space;&plus;&space;e^{-a(\theta-b)}}" title="\huge P(\theta) = c + \frac{1 - c}{1 + e^{-a(\theta-b)}}" />
+  </p>
 
-As curvas são geradas de forma dinâmica a partir da variação dos parâmetros $a$ (*discriminante do item*), $b$ (*dificuldade do item*) e $c$ (*acerto ao acaso*). 
+* **Informação do Item**
+
+<p align="center">
+  <img src="https://latex.codecogs.com/gif.latex?\dpi{90}&space;\huge&space;I(\theta)&space;=&space;a^{2}&space;\frac{(P(\theta)&space;-&space;c)^{2}}{(1&space;-&space;c)^{2}}&space;\frac{Q(\theta)}{P(\theta)}" title="\huge I(\theta) = a^{2} \frac{(P(\theta) - c)^{2}}{(1 - c)^{2}} \frac{Q(\theta)}{P(\theta)}" />
+  </p>
+
+As curvas são geradas de forma dinâmica a partir da variação dos parâmetros *a* (*discriminante do item*), *b* (*dificuldade do item*) e *c* (*acerto ao acaso*). 
 
 Além de gerar as curvas, é possível utilizar um segundo modelo para comparação.
 
@@ -20,12 +26,12 @@ Além de gerar as curvas, é possível utilizar um segundo modelo para comparaç
 Pela demosntração a seguir, é possível ter uma noção dos recursos e funcionalidades que a aplicação tem:
 
 <p align="center">
-  <img src="https://github.com/JNagasava/IRT-dynamic_graph/blob/main/assets/demo.gif" />
+  <img src="https://github.com/JNagasava/IRT-dynamic_graph/blob/main/assets/demo.gif"/>
 </p>
 
 ## Execução
 
-Para a execução dos arquivo, é necessário fazer fazer o upload dos arquivos (*basta clicar em Code na parte superior da página e em seguida clicar em download zip*).
+Para a execução dos arquivo, é necessário fazer o upload dos arquivos (*basta clicar em Code na parte superior da página e em seguida clicar em download zip*).
 
 Já dentro da pasta com os arquivos, execute o seguinte comando no terminal para baixar as bibliotecas que a aplicação utiliza:
 
