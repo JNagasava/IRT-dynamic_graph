@@ -1,6 +1,20 @@
 # IRT-dynamic_graph
 Aplicação que faz a simulação da curva característica e de informação do item, a partir do modelo de **Teoria de Resposta ao Item** (TRI) com 3 parâmetros.
 
+## Sobre o Projeto
+
+A aplicação desenvolvida faz parte do projeto de Iniciação Científica **Avalia Riberião** o qual participam membros do **Instituto de Ciências Matemáticas e de Computação** da **Universidade de São Paulo** (ICMC-USP). O projeto tem como objetivo **avaliar o desempenho dos alunos do Ensino Fundamental de Ribeirão Preto (SP)** através de modelos de **Teoria de Resposta ao Item (TRI)**.
+
+## Participantes
+
+* Mariana Cúri (Coordenadora)
+* Adison Timótio Silva
+* Bernardo Barreto de Abreu
+* Gabriel Couto Tabak
+* João Ricardo Minoru Nagasava
+* João Vitor do Nascimento Pedroso Monteiro
+* Vladimir Morroni Junior
+
 ## Descrição
 
 Esta aplicação, a qual foi desenvolvida em python, tem como função representar graficamente a curva característica e de informação do item a partir do modelo de 3 parâmetros da TRI. 
